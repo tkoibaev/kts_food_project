@@ -1,0 +1,28 @@
+@import './Roboto/fonts';
+
+html, body {
+  // font-family: 'Roboto';
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  display: block !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+pre {
+  margin: 0;
+}
