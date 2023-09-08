@@ -1,9 +1,11 @@
 @import './Roboto/fonts';
+@import './variables.scss';
 
 html, body {
   // font-family: 'Roboto';
   width: 100%;
   margin: 0;
+  background-color: $page-bg-color;
 }
 
 body {

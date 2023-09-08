@@ -1,6 +1,8 @@
 @import '../../styles/variables.scss';
-
-.header {
+.header{
+    background-color: #fff;
+}
+.header__inner {
     width: 100%;
     max-width: $content-block-width;
     height: 64px;
@@ -26,6 +28,14 @@
     display: flex;
     justify-content: space-between;
     gap: 10px;
+}
+
+.header__navigation_element {
+    cursor: pointer;
+}
+
+.header__navigation_element:hover {
+    color:$brand-color;
 }
 
 .header__user-menu {

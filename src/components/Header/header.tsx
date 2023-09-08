@@ -11,8 +11,9 @@ export type HeaderProps = {
 const Header:React.FC<HeaderProps> = ({navElements}) => {
 
 
-    return(
-        <div className='header'>
+return(
+    <div className='header'>
+        <div className='header__inner'>
             <div className='header__logo'>
                 <div className='header__logo_icon'>
                     <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,6 +77,8 @@ const Header:React.FC<HeaderProps> = ({navElements}) => {
                 </div>
             </div>
         </div>
+    </div>
+        
     )
 }
 

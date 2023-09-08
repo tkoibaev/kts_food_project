@@ -1,0 +1,48 @@
+@import '../../../styles/variables.scss';
+ 
+.dropdown {
+    position: relative;
+}
+ 
+.dropdown_disabled {
+    pointer-events: none;
+}
+ 
+.dropdown_open .dropdown__input {
+    border: 1px solid $brand-color;
+}
+ 
+.dropdown__options {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+ 
+    background-color: $default-color;
+    box-shadow: $box-shadow;
+}
+ 
+.dropdown__option {
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+ 
+    width: 100%;
+    height: 48px;
+    padding: $space-s $space-xs;
+ 
+    color: $text-primary-color;
+    text-align: left;
+    cursor: pointer;
+    transition: color .2s ease;
+}
+ 
+ 
+.dropdown__option:hover {
+    color: $text-secondary-color;
+}
+ 
+.dropdown__option_selected {
+    color: $brand-color;
+}
