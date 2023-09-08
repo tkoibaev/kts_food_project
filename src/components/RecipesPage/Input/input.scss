@@ -1,5 +1,10 @@
 @import '../../../styles/variables.scss';
 
+.input {
+    display: flex;
+    gap:20px;
+}
+
 .input-wrapper {
     display: flex;
     color: $text-primary-color;

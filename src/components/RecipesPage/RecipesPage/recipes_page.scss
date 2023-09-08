@@ -37,7 +37,16 @@
 
 .recipes-page__actions_input {
     height: 50px;
+
+    display: flex;
+    gap:19px;
 }
+
+.recipes-page__actions_input_button {
+    border-radius: 50px;
+}
+
+
 .recipes-page__actions_dropdown { 
     display: flex;
     justify-content: end;

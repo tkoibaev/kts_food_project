@@ -33,7 +33,7 @@ const Button: React.FC<ButtonProps> = ({children, onClick, className, disabled, 
     }
   };
   return(
-    <button  data-testid="button" className={classes} disabled={loading||disabled} onClick={handleClick} {...rest}>
+    <button data-testid="button" className={classes} disabled={loading||disabled} onClick={handleClick} {...rest}>
       {loading ? <Loader className='button-loader' size="s"/> : <></>}
       <Text className='button-text'>{children}</Text>
     </button>

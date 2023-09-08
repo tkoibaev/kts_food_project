@@ -1,6 +1,8 @@
 import React from 'react';
 import cn from 'classnames'
 import './Input.scss'
+
+import Button from 'components/Button';
  
 export type InputProps = Omit<
     React.InputHTMLAttributes<HTMLInputElement>,
