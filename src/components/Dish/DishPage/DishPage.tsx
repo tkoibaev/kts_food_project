@@ -45,34 +45,16 @@ const DishPage = () => {
                 url:'https://api.spoonacular.com/recipes/782585/information?apiKey=855cdc3f7d7548649e1b838fd967ca2d&addRecipeInformation=true'
                 // url:'https://api.spoonacular.com/recipes/complexSearch?apiKey=855cdc3f7d7548649e1b838fd967ca2d&number=1&addRecipeInformation=true&fillIngredients=true'
             })
-            setDish([
-                {
-                  id: result.data.results.id,
-                  title: result.data.results.title,
-                  image: result.data.results.image,
-                  preparationMinutes: result.data.results.preparationMinutes,
-                  cookingMinutes: result.data.results.cookingMinutes,
-                  aggregateLikes: result.data.results.aggregateLikes,
-                  servings: result.data.results.servings,
-                  summary: result.data.results.summary,
-                }
-              ]);
-            // setDish(result.data.results.map((pass:el)=>({
-            //     id: pass.id,
-            //     image: pass.image,
-            //     preparationMinutes: pass.preparationMinutes,
-            //     cookingMinutes: pass.cookingMinutes, 
-            //     aggregateLikes: pass.aggregateLikes,
-            //     servings: pass.servings,
-
-            //     title: pass.title,
-
-            //     summary: pass.summary,
-            // })))
-            // console.log('aaaaaaaaaaaaaaa')
-
-            // console.log(result.data.results)
-            // console.log('aaaaaaaaaaaaaaa')
+            setDish({
+                id: result.data.id,
+                title: result.data.title,
+                image: result.data.image,
+                preparationMinutes: result.data.preparationMinutes,
+                cookingMinutes: result.data.cookingMinutes,
+                aggregateLikes: result.data.aggregateLikes,
+                servings: result.data.servings,
+                summary: result.data.summary,
+              });
         }
 
         fetch()
@@ -80,28 +62,25 @@ const DishPage = () => {
 
     return(
         <div className="dish-page">
-            {dish.map((dish:el)=>
-            <DishTitle>
+            {dish && (<DishTitle>
                 {dish.title}
-            </DishTitle>
-            )}
+            </DishTitle>)
+            }
             <div className="dish-page__common-info">
-                {/* {dish.map((dish:el)=> */}
-                <CommonInfo
+                {dish && (<CommonInfo
                 image={dish.image}
                 preparation={dish.preparationMinutes}
                 cooking={dish.cookingMinutes}
                 ratings={dish.aggregateLikes}
                 servings={dish.servings}
-                />
-                {/* )} */}
+                />)}
             </div>
             <div className="dish-page__description">
-                {dish.map((dish:el)=>
-                <DishDescription>
+                {dish &&
+                (<DishDescription>
                     {dish.summary}
                 </DishDescription>
-            )}
+                )}
             </div>
         </div>
     )
