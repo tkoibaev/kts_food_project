@@ -37,7 +37,7 @@ const RecipesPage = () => {
         const fetch = async () => {
             const result = await axios({
                 method:'get',
-                url:'https://api.spoonacular.com/recipes/complexSearch?apiKey=fa7c6c2090c94745a6ec889e612a96da'
+                url:'https://api.spoonacular.com/recipes/complexSearch?apiKey=855cdc3f7d7548649e1b838fd967ca2d'
             })
             setCard(result.data.results.map((pass:el)=>({
                 id: pass.id,

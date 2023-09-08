@@ -8,15 +8,16 @@ import './title.scss'
 export type dishTitleProps = {
     /** Дополнительный classname */
     className?: string,
-    title?: React.ReactNode;
+    children:string,
+    // title?: React.ReactNode;
 };
 
-const DishTitle: React.FC<dishTitleProps> = ({title}) => {
+const DishTitle: React.FC<dishTitleProps> = ({children}) => {
 
     return(
         <div className='dish-title'>
-            <ArrowDownIcon style={{transform:'rotate(90)'}} />
-            <Text>{title}</Text>
+            <ArrowDownIcon style={{transform:'rotate(90deg)'}} />
+            <Text view='title' weight='bold' tag='h2'>{children}</Text>
         </div>
     )
 }

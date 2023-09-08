@@ -12,8 +12,8 @@ const App = () => {
   return (
     <>
       <Header navElements={['Recipes','Ingradients','Products','Menu Items','Meal Planning']}></Header>
-      <RecipesPage></RecipesPage>
-      {/* <DishPage></DishPage> */}
+      {/* <RecipesPage></RecipesPage> */}
+      <DishPage></DishPage>
     </>
 
     )
