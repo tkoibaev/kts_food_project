@@ -8,6 +8,10 @@ html, body {
   background-color: $page-bg-color;
 }
 
+button:hover {
+  border-color: none;
+}
+
 body {
   display: block !important;
 }

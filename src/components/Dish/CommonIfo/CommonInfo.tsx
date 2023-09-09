@@ -44,7 +44,7 @@ const CommonInfo: React.FC<CommonInfoProps> = ({className, image, preparation, c
                 </div>
                 <div className='common-info__stats_block'>
                     <Text view='p-16' weight='normal'>Total</Text>
-                    <Text weight='bold' color='accent'>{preparation}</Text>
+                    <Text weight='bold' color='accent'>{total}</Text>
                 </div>
                 <div className='common-info__stats_block'>
                     <Text view='p-16' weight='normal'>Ratings</Text>

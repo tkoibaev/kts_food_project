@@ -35,6 +35,7 @@ const DishPage = () => {
         image: string;
         aggregateLikes: string;
         servings: string;
+        readyMinutes:string;
 
         title:string;
 
@@ -59,6 +60,7 @@ const DishPage = () => {
                 image: result.data.image,
                 preparationMinutes: result.data.preparationMinutes,
                 cookingMinutes: result.data.cookingMinutes,
+                readyMinutes: result.data.readyInMinutes,
                 aggregateLikes: result.data.aggregateLikes,
                 servings: result.data.servings,
                 summary: result.data.summary,
@@ -66,7 +68,7 @@ const DishPage = () => {
                 equipment:result.data.analyzedInstructions[0].steps,
               });
 
-            //   console.log(result.data.analyzedInstructions[0].steps)
+              console.log(result.data)
             //   console.log(result.data.analyzedInstructions[0].steps[1].equipment[0].name)
 
         }
@@ -85,6 +87,7 @@ const DishPage = () => {
                 image={dish.image}
                 preparation={dish.preparationMinutes}
                 cooking={dish.cookingMinutes}
+                total={dish.readyMinutes}
                 ratings={dish.aggregateLikes}
                 servings={dish.servings}
                 />)}
