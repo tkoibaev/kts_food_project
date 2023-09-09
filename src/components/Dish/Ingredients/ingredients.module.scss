@@ -7,21 +7,21 @@
 .ingredients {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: $space-xl;
 }
 
 .ingredient-list {
     display: grid;
     grid-template-columns: repeat(2,310px);
 
-    gap: 8px 29px;
+    gap: $space-xxs 29px;
 }
 
 
 .ingredient-list_item {
     display: flex;
     align-items: center;
-    gap:16px;
+    gap:$space-m;
 }
 
 .ingredient__vertical {

@@ -2,11 +2,10 @@
 
 .btn {
     display: inline-flex;
-    padding: var(--space-s, 14px) var(--space-l, 20px);
+    padding: $space-s $space-l;
     justify-content: center;
     align-items: center;
-    gap: var(--space-xxs, 8px);
-    border-radius: var(--border-radius, 0px);
+    gap: $space-xxs;
     background: $button-primary-bg-color;
     color: #fff;
     height: 52px;
@@ -16,15 +15,15 @@
 }
 .disableStatus{
     pointer-events: none;
-    border-radius: var(--border-radius, 0px);
+    // border-radius: var(--border-radius, 0px);
     background: $button-primary-bg-disabled-color;
 }
 .btn.loading {
     pointer-events: none;
-    color: #fff;
+    color: $default-color;
 }
 .button-loader {
-    fill:#fff;
+    fill:$default-color;
     margin: 0;
 }
 .button-text {

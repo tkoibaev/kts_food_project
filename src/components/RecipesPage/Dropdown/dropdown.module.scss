@@ -3,7 +3,6 @@
 .dropdown {
     position: relative;
 }
- 
 .dropdown_disabled {
     pointer-events: none;
 }
@@ -19,7 +18,10 @@
     width: 100%;
  
     background-color: $default-color;
-    box-shadow: $box-shadow;
+    // box-shadow: $box-shadow;
+    z-index: 100;
+    
+    border-radius: 0 0 8px 8px;
 }
  
 .dropdown__option {
@@ -36,13 +38,14 @@
     text-align: left;
     cursor: pointer;
     transition: color .2s ease;
+
 }
  
  
 .dropdown__option:hover {
-    color: $text-secondary-color;
+    border: 0.1px solid $brand-color;
 }
  
 .dropdown__option_selected {
-    color: $brand-color;
+    border: 0.1px solid $brand-color;
 }

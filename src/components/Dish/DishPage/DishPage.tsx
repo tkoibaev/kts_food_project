@@ -1,7 +1,7 @@
 import React from "react";
 import {useEffect, useState} from 'react'
 
-import './DishPage.scss'
+import styles from './DishPage.module.scss'
 import { useParams } from 'react-router-dom';
 import Card from "components/RecipesPage/Card";
 import Button from "components/Button";
@@ -52,7 +52,7 @@ const DishPage = () => {
         const fetch = async () => {
             const result = await axios({
                 method:'get',
-                url:`https://api.spoonacular.com/recipes/${id}/information?apiKey=55d5577b17534e658021eee5d8e8fb37&addRecipeInformation=true&instructionsRequired=true&includeEquipment=true`
+                url:`https://api.spoonacular.com/recipes/${id}/information?apiKey=35c0d5eef2554a03ad6c2caad7962b2a&addRecipeInformation=true&instructionsRequired=true&includeEquipment=true`
             })
             setDish({
                 id: result.data.id,
@@ -77,12 +77,12 @@ const DishPage = () => {
     },[])
 
     return(
-        <div className="dish-page">
-            {dish && (<DishTitle className="dish-page__title">
+        <div className={styles['dish-page']}>
+            {dish && (<DishTitle className={styles["dish-page__title"]}>
                 {dish.title}
             </DishTitle>)
             }
-            <div className="dish-page__common-info">
+            <div className={styles["dish-page__common-info"]}>
                 {dish && (<CommonInfo
                 image={dish.image}
                 preparation={dish.preparationMinutes}
@@ -92,14 +92,14 @@ const DishPage = () => {
                 servings={dish.servings}
                 />)}
             </div>
-            <div className="dish-page__description">
+            <div className={styles["dish-page__description"]}>
                 {dish &&
                 (<DishDescription>
-                    {dish.summary}
+                    <div dangerouslySetInnerHTML={{ __html: dish.summary }}></div>
                 </DishDescription>
                 )}
             </div>
-            <div className="dish-page__need">
+            <div className={styles["dish-page__need"]}>
                 <div>
                     {dish && 
                     (<DishIngredients list={dish.extendedIngredients} />

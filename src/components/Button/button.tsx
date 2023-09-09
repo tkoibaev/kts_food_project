@@ -3,7 +3,9 @@ import React from 'react';
 import classNames  from 'classnames';
 import Loader from 'components/Loader';
 import Text from 'components/Text';
-import './button.scss'
+// import './button.scss'
+
+import styles from './button.module.scss'
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   /** Состояние загрузки */
@@ -16,7 +18,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 const Button: React.FC<ButtonProps> = ({children, onClick, className, disabled, state, loading,  ...rest }) => {
   
   const classes = classNames(
-    'btn',
+    styles['btn'],
     className,
     {
       loading: loading,
@@ -34,8 +36,8 @@ const Button: React.FC<ButtonProps> = ({children, onClick, className, disabled, 
   };
   return(
     <button className={classes} disabled={loading||disabled} onClick={handleClick} {...rest}>
-      {loading ? <Loader className='button-loader' size="s"/> : <></>}
-      <Text className='button-text'>{children}</Text>
+      {loading ? <Loader className={styles['button-loader']} size="s"/> : <></>}
+      <Text className={styles['button-text']}>{children}</Text>
     </button>
   )
 };

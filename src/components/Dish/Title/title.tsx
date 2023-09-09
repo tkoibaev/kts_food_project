@@ -6,7 +6,7 @@ import ArrowDownIcon from 'components/icons/ArrowDownIcon';
 import { Link } from 'react-router-dom';
 
 
-import './title.scss'
+import styles from './title.module.scss'
 
 export type dishTitleProps = {
     /** Дополнительный classname */
@@ -18,7 +18,7 @@ export type dishTitleProps = {
 const DishTitle: React.FC<dishTitleProps> = ({children,className}) => {
 
     return(
-        <div className={classNames('dish-title', className)}>
+        <div className={classNames(styles['dish-title'], className)}>
             {/* <ArrowDownIcon width={40} style={{transform:'rotate(90deg)'}} /> */}
             <Link to={`/`}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">

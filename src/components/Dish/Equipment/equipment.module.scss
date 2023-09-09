@@ -1,19 +1,21 @@
+@import '../../../styles/variables.scss';
+
 .equipment {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: $space-xl;
 }
 
 .equipment-list {
     display: grid;
     grid-template-columns: repeat(2,153px);
 
-    gap: 8px 29px;
+    gap: $space-xxs 29px;
 }
 
 
 .equipment-list_item {
     display: flex;
     align-items: center;
-    gap:16px;
+    gap:$space-m;
 }

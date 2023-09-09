@@ -1,5 +1,5 @@
 import React from 'react';
-import './ingredients.scss'
+import styles from './ingredients.module.scss'
 
 import Text from 'components/Text';
 
@@ -9,12 +9,12 @@ export type DishIngredientsProps = {
 
 const DishIngredients: React.FC<DishIngredientsProps> = ({ list }) => {
   return (
-    <div className='blok'>
-      <div className='ingredients'>
+    <div className={styles.blok}>
+      <div className={styles.ingredients}>
         <Text tag='h2' weight='bold'>Ingredients</Text>
-        <div className='ingredient-list'>  
+        <div className={styles['ingredient-list']}>  
           {list.map((ingredient, index) => (
-          <div className='ingredient-list_item' key={index}>
+          <div className={styles['ingredient-list_item']} key={index}>
             <div className=''>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <g clip-path="url(#clip0_512_2048)">
@@ -36,11 +36,11 @@ const DishIngredients: React.FC<DishIngredientsProps> = ({ list }) => {
           ))}
         </div>
       </div>
-      <div className='ingredient__vertical'>
+      <div className={styles['ingredient__vertical']}>
           <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7" fill="none">
             <path d="M7 3.5C7 5.433 5.433 7 3.5 7C1.567 7 0 5.433 0 3.5C0 1.567 1.567 0 3.5 0C5.433 0 7 1.567 7 3.5Z" fill="#B5460F"/>
           </svg>
-          <div className='ingredient__vertical-line'>
+          <div className={styles['ingredient__vertical-line']}>
 
           </div>
       </div>

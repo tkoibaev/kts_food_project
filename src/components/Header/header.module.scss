@@ -1,6 +1,7 @@
 @import '../../styles/variables.scss';
+
 .header{
-    background-color: #fff;
+    background-color: $default-color;
 }
 .header__inner {
     width: 100%;
@@ -17,7 +18,7 @@
 .header__logo {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: $space-l;
 }
 
 .header__navigation {
@@ -27,7 +28,7 @@
 
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    gap: $space-m;
 }
 
 .header__navigation_element {
@@ -41,5 +42,5 @@
 .header__user-menu {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: $space-l;
 }

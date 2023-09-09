@@ -1,9 +1,8 @@
 import react from 'react'
-import './CommonInfo.scss'
 import Text from 'components/Text';
 import { Link } from 'react-router-dom';
 
-
+import styles from './CommonInfo.module.scss'
 
 export type CommonInfoProps = {
     /** Дополнительный classname */
@@ -29,28 +28,32 @@ export type CommonInfoProps = {
 const CommonInfo: React.FC<CommonInfoProps> = ({className, image, preparation, cooking, total, ratings, servings}) => {
 
     return(
-        <div className='common-info'>
-            <div className='common-info__image' style={{ background: `url(${image})`, backgroundSize: 'cover' }}>
+        <div className={styles['common-info']}>
+            <div className={styles['common-info__image']} style={{ background: `url(${image})`, backgroundSize: 'cover' }}>
                 {/* Содержимое элемента */}
             </div>
-            <div className='common-info__stats'>
-                <div className='common-info__stats_block'>
+            <div className={styles['common-info__stats']}>
+                {preparation !== -1 && (
+                <div className={styles['common-info__stats_block']}>
                     <Text view='p-16' weight='normal'>Preparation</Text>
                     <Text weight='bold' color='accent'>{preparation}</Text>
                 </div>
-                <div className='common-info__stats_block'>
+                )}
+                {cooking !== -1 && (
+                <div className={styles['common-info__stats_block']}>
                     <Text view='p-16' weight='normal'>Cooking</Text>
                     <Text weight='bold' color='accent'>{cooking}</Text>
                 </div>
-                <div className='common-info__stats_block'>
-                    <Text view='p-16' weight='normal'>Total</Text>
+                )}
+                <div className={styles['common-info__stats_block']}>
+                    <Text view='p-16' weight='normal'>Total Time</Text>
                     <Text weight='bold' color='accent'>{total}</Text>
                 </div>
-                <div className='common-info__stats_block'>
+                <div className={styles['common-info__stats_block']}>
                     <Text view='p-16' weight='normal'>Ratings</Text>
                     <Text weight='bold' color='accent'>{ratings}</Text>
                 </div>
-                <div className='common-info__stats_block'>
+                <div className={styles['common-info__stats_block']}>
                     <Text view='p-16' weight='normal'>Servings</Text>
                     <Text weight='bold' color='accent'>{servings}</Text>
                 </div>

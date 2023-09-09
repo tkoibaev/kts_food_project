@@ -41,18 +41,14 @@
     height: 124px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: $space-l;
 }
 
 .recipes-page__actions_input {
     height: 50px;
 
     display: flex;
-    gap:19px;
-}
-
-.recipes-page__actions_input_button {
-    border-radius: 50px;
+    gap:$space-l;
 }
 
 

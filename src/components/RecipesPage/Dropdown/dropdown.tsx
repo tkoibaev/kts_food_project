@@ -1,5 +1,5 @@
 import React, { HtmlHTMLAttributes, useState } from 'react';
-import './dropdown.scss'
+import styles from './dropdown.module.scss'
 import cn from 'classnames'
 import Input from 'components/RecipesPage/Input';
 import Text from 'components/Text';
@@ -35,8 +35,6 @@ const Dropdown: React.FC<MultiDropdownProps> = ({
     disabled,
     getTitle,
 }) => {
-  
-
     const rootRef = React.useRef<HTMLDivElement | null>(null)
     const [isOpen, setIsOpen] = React.useState(false);
     const [isTyping, setIsTyping] = React.useState(false);
@@ -57,13 +55,7 @@ const Dropdown: React.FC<MultiDropdownProps> = ({
         }
         setIsOpen(true)
         setIsTyping(true)
-        console.log(isOpen)
     }, [disabled])
- 
-    // React.useEffect(() => {
-    //     console.log(options)
-    // }, [])
- 
  
     const onClickOption = (selectedOption: Option) => () => {
         if (disabled) {
@@ -71,16 +63,12 @@ const Dropdown: React.FC<MultiDropdownProps> = ({
         }
  
         setIsTyping(false)
-        console.log(`set is ${[...selectedSet.keys()]}`);
  
         if (selectedSet.has(selectedOption)) {
-            console.log(11)
             onChange(value.filter((o) => o.key !== selectedOption.key))
             return
         }
-        console.log(`1 ${filter}`)
         onChange([...value, selectedOption])
-        console.log(`2 ${filter}`)
     }
  
     React.useEffect(() => {
@@ -114,10 +102,8 @@ const Dropdown: React.FC<MultiDropdownProps> = ({
             if (value.length === 0) {
                 return ''
             }
- 
             return title
         }
- 
         if (isTyping) {
             return filter
         }
@@ -128,15 +114,15 @@ const Dropdown: React.FC<MultiDropdownProps> = ({
     return (
         <div
             className={cn(
-                'dropdown',
-                isOpen && 'dropdown_open',
-                disabled && 'dropdown_disabled',
+                styles.dropdown,
+                isOpen && styles.dropdown_open,
+                disabled && styles.dropdown_disabled,
                 className
             )}
             ref={rootRef}
         >
             <Input
-                className='dropdown__input'
+                className={styles.dropdown__input}
                 value={inputValue}
                 placeholder={title}
                 onChange={setFilter}
@@ -144,13 +130,13 @@ const Dropdown: React.FC<MultiDropdownProps> = ({
                 afterSlot={<ArrowDownIcon color='secondary' width={24} height={24} />}
             />
             {isOpen && (
-                <div className="dropdown__options">
+                <div className={styles.dropdown__options}>
                     {filteredOptions.map((o) => (
                         <button
                             key={o.key}
                             className={cn(
-                                'dropdown__option',
-                                selectedSet.has(o) && 'dropdown__option_selected'
+                                styles.dropdown__option,
+                                selectedSet.has(o) && styles.dropdown__option_selected
                             )}
                             onClick={onClickOption(o)}
                         >
@@ -164,3 +150,4 @@ const Dropdown: React.FC<MultiDropdownProps> = ({
 };
  
 export default Dropdown;
+ 

@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .common-info {
     display: flex;
     gap:166px;
@@ -9,7 +11,7 @@
     height: 298px;
     flex-shrink: 0;
 
-    border-radius: 10px;
+    border-radius: $border-radius;
     // background: url('../../assets/recipes.png'), lightgray 50% / cover no-repeat;
 
 }

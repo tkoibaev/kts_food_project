@@ -1,5 +1,5 @@
 import react from 'react'
-import './direction.scss'
+import styles from './direction.module.scss'
 
 
 import Text from 'components/Text';
@@ -11,11 +11,11 @@ export type DishDirectionProps = {
 const DishDirection:React.FC<DishDirectionProps>=({list})=> {
 
 return(
-    <div className='direction'>
+    <div className={styles.direction}>
         <Text tag='h2' weight='bold'>Directions</Text>
-        <div className='direction-list'>  
+        <div className={styles['direction-list']}>  
           {list.map((step, index) => (
-          <div className='direction-list__item' key={index}>
+          <div className={styles['direction-list__item']} key={index}>
             <div>
                 <Text weight='bold' view='p-16'>Step {index+1}</Text>
             </div>
