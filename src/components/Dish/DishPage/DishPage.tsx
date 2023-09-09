@@ -12,6 +12,9 @@ import { Option } from "components/RecipesPage/Dropdown";
 import CommonInfo from "components/Dish/CommonIfo";
 import DishTitle from "components/Dish/Title";
 import DishDescription from "components/Dish/Description";
+import DishIngredients from "components/Dish/Ingredients";
+import DishEquipment from "components/Dish/Equipment";
+import DishDirection from "components/Dish/Direction";
 
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -36,14 +39,17 @@ const DishPage = () => {
         title:string;
 
         summary:string;
+
+        extendedIngredients:[];
+
+        equipment:[];
     }
 
     useEffect(()=>{
         const fetch = async () => {
             const result = await axios({
                 method:'get',
-                url:'https://api.spoonacular.com/recipes/782585/information?apiKey=855cdc3f7d7548649e1b838fd967ca2d&addRecipeInformation=true'
-                // url:'https://api.spoonacular.com/recipes/complexSearch?apiKey=855cdc3f7d7548649e1b838fd967ca2d&number=1&addRecipeInformation=true&fillIngredients=true'
+                url:'https://api.spoonacular.com/recipes/782585/information?apiKey=855cdc3f7d7548649e1b838fd967ca2d&addRecipeInformation=true&instructionsRequired=true&includeEquipment=true'
             })
             setDish({
                 id: result.data.id,
@@ -54,7 +60,14 @@ const DishPage = () => {
                 aggregateLikes: result.data.aggregateLikes,
                 servings: result.data.servings,
                 summary: result.data.summary,
+                extendedIngredients:result.data.extendedIngredients,
+                equipment:result.data.analyzedInstructions[0].steps,
               });
+              console.log(result.data.analyzedInstructions[0])
+
+            //   console.log(result.data.analyzedInstructions[0].steps)
+            //   console.log(result.data.analyzedInstructions[0].steps[1].equipment[0].name)
+
         }
 
         fetch()
@@ -62,7 +75,7 @@ const DishPage = () => {
 
     return(
         <div className="dish-page">
-            {dish && (<DishTitle>
+            {dish && (<DishTitle className="dish-page__title">
                 {dish.title}
             </DishTitle>)
             }
@@ -80,6 +93,21 @@ const DishPage = () => {
                 (<DishDescription>
                     {dish.summary}
                 </DishDescription>
+                )}
+            </div>
+            <div>
+                {dish && 
+                (<DishIngredients list={dish.extendedIngredients} />
+                )}
+            </div>
+            <div>
+                {dish && 
+                (<DishEquipment list={dish.equipment} />
+                )}
+            </div>
+            <div>
+                {dish && 
+                (<DishDirection list={dish.equipment} />
                 )}
             </div>
         </div>

@@ -1,0 +1,17 @@
+.ingredients {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ingredient-list {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+
+.ingredient-list_item {
+    display: flex;
+    align-items: center;
+    gap:16px;
+}

@@ -5,4 +5,16 @@
     max-width: $content-block-width;
     width: 100%;
     margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.dish-page__title {
+    margin-top: 39px;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
 }

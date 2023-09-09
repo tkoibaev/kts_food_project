@@ -1,0 +1,17 @@
+.equipment {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.equipment-list {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+
+.equipment-list_item {
+    display: flex;
+    align-items: center;
+    gap:16px;
+}
