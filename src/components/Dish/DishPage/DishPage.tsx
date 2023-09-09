@@ -46,13 +46,12 @@ const DishPage = () => {
     }
 
     const { id } = useParams()
-    console.log(id)
 
     useEffect(()=>{
         const fetch = async () => {
             const result = await axios({
                 method:'get',
-                url:`https://api.spoonacular.com/recipes/${id}/information?apiKey=855cdc3f7d7548649e1b838fd967ca2d&addRecipeInformation=true&instructionsRequired=true&includeEquipment=true`
+                url:`https://api.spoonacular.com/recipes/${id}/information?apiKey=55d5577b17534e658021eee5d8e8fb37&addRecipeInformation=true&instructionsRequired=true&includeEquipment=true`
             })
             setDish({
                 id: result.data.id,
@@ -66,7 +65,6 @@ const DishPage = () => {
                 extendedIngredients:result.data.extendedIngredients,
                 equipment:result.data.analyzedInstructions[0].steps,
               });
-              console.log(result.data.analyzedInstructions[0])
 
             //   console.log(result.data.analyzedInstructions[0].steps)
             //   console.log(result.data.analyzedInstructions[0].steps[1].equipment[0].name)
@@ -98,16 +96,19 @@ const DishPage = () => {
                 </DishDescription>
                 )}
             </div>
-            <div>
-                {dish && 
-                (<DishIngredients list={dish.extendedIngredients} />
-                )}
+            <div className="dish-page__need">
+                <div>
+                    {dish && 
+                    (<DishIngredients list={dish.extendedIngredients} />
+                    )}
+                </div>
+                <div>
+                    {dish && 
+                    (<DishEquipment list={dish.equipment} />
+                    )}
+                </div>
             </div>
-            <div>
-                {dish && 
-                (<DishEquipment list={dish.equipment} />
-                )}
-            </div>
+                
             <div>
                 {dish && 
                 (<DishDirection list={dish.equipment} />

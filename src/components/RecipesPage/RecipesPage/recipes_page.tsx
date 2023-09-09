@@ -20,31 +20,60 @@ const RecipesPage = () => {
     // const [card, setCard] = useState([]);
     const [cards, setCard] = useState([]);
     // const [hasMore, setHasMore] = useState(true);
-
+    interface card {
+        id: number;
+        title: string;
+        image: string;
+        readyInMinutes:string;
+        ccal:string;
+        ings:string;
+    }
     interface el {
         id: number;
         title: string;
         image: string;
+        readyInMinutes:string;
+        nutrition: {
+            nutrients: {
+              amount: number;
+            }[];
+            ingredients: {
+                name: string;
+            }[];
+        };
     }
 
     const options = [
-        { key: 'msk', value: 'Москва' },
-        { key: 'spb', value: 'Санкт-Петербург' },
-        { key: 'ekb', value: 'Екатеринбург' },
+        { key: 'hot', value: 'Горячее' },
+        { key: 'cold', value: 'Холодное' },
+        { key: 'desert', value: 'Десерты' },
     ];
 
     useEffect(()=>{
         const fetch = async () => {
             const result = await axios({
                 method:'get',
-                url:'https://api.spoonacular.com/recipes/complexSearch?apiKey=855cdc3f7d7548649e1b838fd967ca2d'
+                url:'https://api.spoonacular.com/recipes/complexSearch?apiKey=55d5577b17534e658021eee5d8e8fb37&addRecipeInformation=true&instructionsRequired=true&includeEquipment=true&analyzedInstructions=true&addRecipeNutrition=true'
             })
             setCard(result.data.results.map((pass:el)=>({
                 id: pass.id,
                 title: pass.title,
-                image: pass.image
+                image: pass.image,
+                readyInMinutes: pass.readyInMinutes,
+                ccal: pass.nutrition.nutrients[0].amount,
+                // ings: pass.nutrition.ingredients.map(elem=>{
+                //     elem.name
+                // })
+
+                ings: pass.nutrition.ingredients.reduce((acc,elem,index)=> {
+                    if (index === 0) {
+                        return elem.name;
+                      } else {
+                        return acc + "+" + elem.name;
+                      }
+                    },'')
             })))
-            console.log('sssssssssssss')
+            // console.log(cards.ccal)
         }
         fetch()
     },[])
@@ -76,16 +105,15 @@ const RecipesPage = () => {
                         options={options}
                         value={value}
                         onChange={setValue}
-                        getTitle={(values: Option[]) => values.length === 0 ? 'Выберите города' : values.map(({ value }) => value).join(', ')}
+                        getTitle={(values: Option[]) => values.length === 0 ? 'Categories' : values.map(({ value }) => value).join(', ')}
                         />
                     </div>
                 </div>
                 <div className="recipes-page__cards-block">
-                    {cards.map((card: el) =>
+                    {cards.map((card: card) =>
                         <Link to={`/dish/${card.id}`}>
-                             <Card captionSlot={card.id} contentSlot={card.id} actionSlot={<Button>Save</Button>} image={card.image} title={card.title} subtitle={card.id} />
+                             <Card captionSlot={card.readyInMinutes} contentSlot={`${card.ccal} kkal`} actionSlot={<Button style={{borderRadius:'10px'}}>Save</Button>} image={card.image} title={card.title} subtitle={card.ings} />
                         </Link>
-                        // <Card captionSlot={card.id} contentSlot={card.id} actionSlot={<Button>Save</Button>} image={card.image} title={card.title} subtitle={card.id} />)
                     )}
                 </div>
             </div>  

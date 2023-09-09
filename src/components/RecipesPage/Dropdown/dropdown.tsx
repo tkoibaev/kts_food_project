@@ -60,9 +60,9 @@ const Dropdown: React.FC<MultiDropdownProps> = ({
         console.log(isOpen)
     }, [disabled])
  
-    React.useEffect(() => {
-        console.log(options)
-    }, [])
+    // React.useEffect(() => {
+    //     console.log(options)
+    // }, [])
  
  
     const onClickOption = (selectedOption: Option) => () => {

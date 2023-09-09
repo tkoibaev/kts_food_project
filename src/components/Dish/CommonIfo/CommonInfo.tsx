@@ -35,23 +35,23 @@ const CommonInfo: React.FC<CommonInfoProps> = ({className, image, preparation, c
             </div>
             <div className='common-info__stats'>
                 <div className='common-info__stats_block'>
-                    <Text weight='bold'>Preparation</Text>
+                    <Text view='p-16' weight='normal'>Preparation</Text>
                     <Text weight='bold' color='accent'>{preparation}</Text>
                 </div>
                 <div className='common-info__stats_block'>
-                    <Text weight='bold'>Cooking</Text>
+                    <Text view='p-16' weight='normal'>Cooking</Text>
                     <Text weight='bold' color='accent'>{cooking}</Text>
                 </div>
                 <div className='common-info__stats_block'>
-                    <Text weight='bold'>Total</Text>
+                    <Text view='p-16' weight='normal'>Total</Text>
                     <Text weight='bold' color='accent'>{preparation}</Text>
                 </div>
                 <div className='common-info__stats_block'>
-                    <Text weight='bold'>Ratings</Text>
+                    <Text view='p-16' weight='normal'>Ratings</Text>
                     <Text weight='bold' color='accent'>{ratings}</Text>
                 </div>
                 <div className='common-info__stats_block'>
-                    <Text weight='bold'>Servings</Text>
+                    <Text view='p-16' weight='normal'>Servings</Text>
                     <Text weight='bold' color='accent'>{servings}</Text>
                 </div>
             </div>

@@ -1,3 +1,6 @@
+@import '../../../styles/styles.scss';
+@import '../../../styles/variables.scss';
+
 .card {
     max-width: 360px;
     height: auto;
@@ -25,20 +28,21 @@
 }
  
 .card_caption {
-    /* overflow: hidden; */
+
     color: #AFADB5;
-    /* text-overflow: ellipsis; */
-    font-family: Roboto;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: 18px;
     margin-bottom: 8px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
  
 .card_title {
     color: #000;
-    font-family: Roboto;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -47,10 +51,7 @@
 }
  
 .card_subtitle {
-    /* overflow: hidden; */
     color: #AFADB5;
-    /* text-overflow: ellipsis; */
-    font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -70,11 +71,14 @@
 }
  
 .card_content {
-    color: #000;
-    font-family: Roboto;
+    color: $brand-color;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: 22px
+}
+
+.card_action {
+    border-radius: 10px;
 }
  

@@ -1,3 +1,9 @@
+@import '../../../styles/variables.scss';
+
+.blok {
+    display: flex;
+}
+
 .ingredients {
     display: flex;
     flex-direction: column;
@@ -6,7 +12,9 @@
 
 .ingredient-list {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2,310px);
+
+    gap: 8px 29px;
 }
 
 
@@ -14,4 +22,21 @@
     display: flex;
     align-items: center;
     gap:16px;
+}
+
+.ingredient__vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+}
+
+.ingredient__vertical-line {
+    width: 2px;
+    background-color: $brand-color;
+    margin-right: -5px;
+    margin-bottom: -20px;
+
+    height: 100%;
+    margin-left: 2.5px;
 }

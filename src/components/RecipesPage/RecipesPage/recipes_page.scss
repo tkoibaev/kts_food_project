@@ -1,8 +1,14 @@
 @import '../../../styles/variables.scss';
+@import '../../../styles/styles.scss';
+
 // .recipes-page {
 //     width: $content-block-width;
 //     margin: 0 auto;
 // }
+
+.recipes-page {
+    padding-bottom: 113px;
+}
 
 .recipes-page__picture {
     width: 100%;
