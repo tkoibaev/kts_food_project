@@ -2,7 +2,7 @@ import React from "react";
 import {useEffect, useState} from 'react'
 
 import './recipes_page.scss'
-
+import { Link } from 'react-router-dom';
 import Card from "components/RecipesPage/Card";
 import Button from "components/Button";
 import Input from "components/RecipesPage/Input";
@@ -82,10 +82,12 @@ const RecipesPage = () => {
                 </div>
                 <div className="recipes-page__cards-block">
                     {cards.map((card: el) =>
-                        <Card captionSlot={card.id} contentSlot={card.id} actionSlot={<Button>Save</Button>} image={card.image} title={card.title} subtitle={card.id} />)
-                    }
+                        <Link to={`/dish/${card.id}`}>
+                             <Card captionSlot={card.id} contentSlot={card.id} actionSlot={<Button>Save</Button>} image={card.image} title={card.title} subtitle={card.id} />
+                        </Link>
+                        // <Card captionSlot={card.id} contentSlot={card.id} actionSlot={<Button>Save</Button>} image={card.image} title={card.title} subtitle={card.id} />)
+                    )}
                 </div>
-            
             </div>  
         </div>
         

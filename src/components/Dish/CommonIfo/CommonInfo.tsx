@@ -1,6 +1,7 @@
 import react from 'react'
 import './CommonInfo.scss'
 import Text from 'components/Text';
+import { Link } from 'react-router-dom';
 
 
 
@@ -29,8 +30,8 @@ const CommonInfo: React.FC<CommonInfoProps> = ({className, image, preparation, c
 
     return(
         <div className='common-info'>
-            <div className='common-info__image'>
-                {/* <img src={image} alt="DishPic"></img> */}
+            <div className='common-info__image' style={{ background: `url(${image})`, backgroundSize: 'cover' }}>
+                {/* Содержимое элемента */}
             </div>
             <div className='common-info__stats'>
                 <div className='common-info__stats_block'>

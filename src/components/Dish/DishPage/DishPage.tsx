@@ -2,7 +2,7 @@ import React from "react";
 import {useEffect, useState} from 'react'
 
 import './DishPage.scss'
-
+import { useParams } from 'react-router-dom';
 import Card from "components/RecipesPage/Card";
 import Button from "components/Button";
 import Input from "components/RecipesPage/Input";
@@ -45,11 +45,14 @@ const DishPage = () => {
         equipment:[];
     }
 
+    const { id } = useParams()
+    console.log(id)
+
     useEffect(()=>{
         const fetch = async () => {
             const result = await axios({
                 method:'get',
-                url:'https://api.spoonacular.com/recipes/782585/information?apiKey=855cdc3f7d7548649e1b838fd967ca2d&addRecipeInformation=true&instructionsRequired=true&includeEquipment=true'
+                url:`https://api.spoonacular.com/recipes/${id}/information?apiKey=855cdc3f7d7548649e1b838fd967ca2d&addRecipeInformation=true&instructionsRequired=true&includeEquipment=true`
             })
             setDish({
                 id: result.data.id,
