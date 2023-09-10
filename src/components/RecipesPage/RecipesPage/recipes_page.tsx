@@ -1,5 +1,5 @@
-import React from "react";
-import {useEffect, useState} from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react';
+
 
 import styles from  './recipes_page.module.scss'
 import { Link } from 'react-router-dom';
@@ -16,14 +16,19 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import axios from "axios";
 
 import '../../assets/recipes.png'
+import { off } from "process";
 
 
 const RecipesPage = () => {
     const [value, setValue] = useState<Option[]>([]);  
     // const [card, setCard] = useState([]);
-    const [cards, setCard] = useState([]);
-    const [inputValue,setInputValue] = useState()
-    // const [hasMore, setHasMore] = useState(true);
+    const [cards, setCard] = useState<card[]>([]);
+    const [offset, setOffset] = useState(0);
+    // const [inputValue,setInputValue] = useState()
+    const [hasMore, setHasMore] = useState(true);
+    const [isInitialFetchDone, setInitialFetchDone] = useState(false);
+
+    
     interface card {
         id: number;
         title: string;
@@ -55,29 +60,53 @@ const RecipesPage = () => {
 
     useEffect(()=>{
         const fetch = async () => {
+            if(cards.length>24){
+                setHasMore(false)
+                return
+            }
             const result = await axios({
                 method:'get',
-                url:'https://api.spoonacular.com/recipes/complexSearch?apiKey=35c0d5eef2554a03ad6c2caad7962b2a&addRecipeInformation=true&instructionsRequired=true&includeEquipment=true&analyzedInstructions=true&addRecipeNutrition=true'
+                url:`https://api.spoonacular.com/recipes/complexSearch?apiKey=efa577eb5e8e4f1fa5087327495ea145&addRecipeInformation=true&instructionsRequired=true&includeEquipment=true&analyzedInstructions=true&addRecipeNutrition=true&offset=${offset}&number=3`
             })
-            setCard(result.data.results.map((pass:el)=>({
+            // setCard(result.data.results.map((pass:el)=>({
+            //     id: pass.id,
+            //     title: pass.title,
+            //     image: pass.image,
+            //     readyInMinutes: pass.readyInMinutes,
+            //     ccal: pass.nutrition.nutrients[0].amount,
+            //     ings: pass.nutrition.ingredients.reduce((acc,elem,index)=> {
+            //         if (index === 0) {
+            //             return elem.name;
+            //           } else {
+            //             return acc + "+" + elem.name;
+            //           }
+            //         },'')
+            // })))
+            // setCard((prevCards) => [...prevCards, ...newCards]);
+            // setHasMore(car.length > 0);
+            const newCards = result.data.results.map((pass: el) => ({
                 id: pass.id,
                 title: pass.title,
                 image: pass.image,
                 readyInMinutes: pass.readyInMinutes,
                 ccal: pass.nutrition.nutrients[0].amount,
-                ings: pass.nutrition.ingredients.reduce((acc,elem,index)=> {
+                ings: pass.nutrition.ingredients
+                  .reduce((acc, elem, index) => {
                     if (index === 0) {
-                        return elem.name;
-                      } else {
-                        return acc + "+" + elem.name;
-                      }
-                    },'')
-            })))
-
-            
+                      return elem.name;
+                    } else {
+                      return acc + "+" + elem.name;
+                    }
+                  }, ""),
+              }));
+              setCard((prevCards) => [...prevCards, ...newCards]);
         }
         fetch()
-    },[])
+    },[offset])
+
+    const loadMore = () => {
+        setOffset(prevOffset => prevOffset + 3);
+    };
 
 
     return(
@@ -114,13 +143,29 @@ const RecipesPage = () => {
                         />
                     </div>
                 </div>
-                <div className={styles["recipes-page__cards-block"]}>
-                    {cards.map((card: card) =>
-                        <Link to={`/dish/${card.id}`}>
-                             <Card captionSlot={card.readyInMinutes} contentSlot={`${card.ccal} kkal`} actionSlot={<Button style={{borderRadius:'10px'}}>Save</Button>} image={card.image} title={card.title} subtitle={card.ings} />
-                        </Link>
-                    )}
-                </div>
+                
+                    <InfiniteScroll
+                    dataLength={cards.length}
+                    next={loadMore}
+                    hasMore={hasMore} // Set this to your desired condition to stop the infinite scrolling
+                    loader={<h4>Loading...</h4>} // Replace with your loader component
+                    endMessage={<p>No more recipes to load.</p>} // Message to show when all recipes are loaded
+                    >
+                        <div className={styles["recipes-page__cards-block"]}>
+                            {cards.map((card: card) => (
+                                <Link to={`/dish/${card.id}`} key={card.id}>
+                                <Card
+                                    captionSlot={card.readyInMinutes}
+                                    contentSlot={`${card.ccal} kkal`}
+                                    actionSlot={<Button style={{ borderRadius: '10px' }}>Save</Button>}
+                                    image={card.image}
+                                    title={card.title}
+                                    subtitle={card.ings}
+                                />
+                                </Link>
+                            ))}
+                        </div>
+                    </InfiniteScroll>
             </div>  
         </div>
         
