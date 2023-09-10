@@ -1,13 +1,11 @@
-import React from "react";
-import {useEffect, useState} from 'react'
+import React, {useEffect, useState} from "react";
+import axios from "axios";
+import { useParams } from 'react-router-dom';
 
 import styles from './DishPage.module.scss'
-import { useParams } from 'react-router-dom';
-import Card from "components/RecipesPage/Card";
-import Button from "components/Button";
-import Input from "components/RecipesPage/Input";
-import Dropdown from "components/RecipesPage/Dropdown";
-import Text from "components/Text";
+import '../../assets/recipes.png'
+
+
 import { Option } from "components/RecipesPage/Dropdown";
 import CommonInfo from "components/Dish/CommonIfo";
 import DishTitle from "components/Dish/Title";
@@ -16,10 +14,10 @@ import DishIngredients from "components/Dish/Ingredients";
 import DishEquipment from "components/Dish/Equipment";
 import DishDirection from "components/Dish/Direction";
 
-import axios from "axios";
-import InfiniteScroll from "react-infinite-scroll-component";
 
-import '../../assets/recipes.png'
+
+
+
 
 
 const DishPage = () => {
@@ -52,7 +50,7 @@ const DishPage = () => {
         const fetch = async () => {
             const result = await axios({
                 method:'get',
-                url:`https://api.spoonacular.com/recipes/${id}/information?apiKey=35c0d5eef2554a03ad6c2caad7962b2a&addRecipeInformation=true&instructionsRequired=true&includeEquipment=true`
+                url:`https://api.spoonacular.com/recipes/${id}/information?apiKey=e3eb9eb1dbd54b63aa8410aa35ae2a36&addRecipeInformation=true&instructionsRequired=true&includeEquipment=true`
             })
             setDish({
                 id: result.data.id,

@@ -1,6 +1,6 @@
-import React from 'react';
-import {useState} from 'react'
+import React,{useState} from 'react';
 import cn from 'classnames'
+
 import styles from './input.module.scss'
 
 import Button from 'components/Button';

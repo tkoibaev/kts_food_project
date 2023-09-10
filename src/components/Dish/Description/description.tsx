@@ -1,5 +1,5 @@
-import react from 'react'
-import { Fragment, Children } from 'react';
+import react, { Fragment, Children } from 'react'
+
 import Text from 'components/Text';
 
 import styles from './description.module.scss'

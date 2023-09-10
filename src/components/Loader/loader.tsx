@@ -1,8 +1,7 @@
-//all done
 import React from 'react';
-import path from '../assets/loader.svg'
-import styles from './loader.module.scss'
 import classNames from 'classnames';
+
+import styles from './loader.module.scss'
 
 export type LoaderProps = {
     /** Размер */

@@ -1,23 +1,25 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
-
+import { Link } from 'react-router-dom';
+import InfiniteScroll from "react-infinite-scroll-component";
+import axios from "axios";
 
 import styles from  './recipes_page.module.scss'
-import { Link } from 'react-router-dom';
+import '../../assets/recipes.png'
+
+import { Option } from "components/RecipesPage/Dropdown";
 import Card from "components/RecipesPage/Card";
 import Button from "components/Button";
 import Input from "components/RecipesPage/Input";
 import Dropdown from "components/RecipesPage/Dropdown";
 import Text from "components/Text";
-import { Option } from "components/RecipesPage/Dropdown";
 import Loader from 'components/Loader';
 
-import InfiniteScroll from "react-infinite-scroll-component";
 
 
-import axios from "axios";
 
-import '../../assets/recipes.png'
-import { off } from "process";
+
+
+
 
 
 const RecipesPage = () => {
@@ -67,7 +69,7 @@ const RecipesPage = () => {
             }
             const result = await axios({
                 method:'get',
-                url:`https://api.spoonacular.com/recipes/complexSearch?apiKey=35c0d5eef2554a03ad6c2caad7962b2a&addRecipeInformation=true&instructionsRequired=true&includeEquipment=true&analyzedInstructions=true&addRecipeNutrition=true&offset=${offset}&number=3`
+                url:`https://api.spoonacular.com/recipes/complexSearch?apiKey=e3eb9eb1dbd54b63aa8410aa35ae2a36&addRecipeInformation=true&instructionsRequired=true&includeEquipment=true&analyzedInstructions=true&addRecipeNutrition=true&offset=${offset}&number=3`
             })
             // setCard(result.data.results.map((pass:el)=>({
             //     id: pass.id,
@@ -85,6 +87,8 @@ const RecipesPage = () => {
             // })))
             // setCard((prevCards) => [...prevCards, ...newCards]);
             // setHasMore(car.length > 0);
+            
+            //При бесконечном скролле возникает проблема: поочередно уходят запросы на 3 карточки, и почему-то первая тройка рендерится 2 раза. При обычном запросе(нет б.с.) все работает нормально
             const newCards = result.data.results.map((pass: el) => ({
                 id: pass.id,
                 title: pass.title,
@@ -148,9 +152,9 @@ const RecipesPage = () => {
                     <InfiniteScroll
                     dataLength={cards.length}
                     next={loadMore}
-                    hasMore={hasMore} // Set this to your desired condition to stop the infinite scrolling
-                    loader={<div style={{width:'300px',height:'80px',margin:'0 auto',display:'flex' ,justifyContent:'center'}}><Loader size='l'></Loader></div>} // Replace with your loader component
-                    endMessage={<p>No more recipes to load.</p>} // Message to show when all recipes are loaded
+                    hasMore={hasMore} 
+                    loader={<div style={{width:'300px',height:'80px',margin:'0 auto',display:'flex' ,justifyContent:'center'}}><Loader size='l'></Loader></div>} 
+                    endMessage={<p>No more recipes to load.</p>} 
                     >
                         <div className={styles["recipes-page__cards-block"]}>
                             {cards.map((card: card) => (

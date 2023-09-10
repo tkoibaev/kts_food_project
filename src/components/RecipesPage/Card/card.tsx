@@ -1,10 +1,10 @@
-//all done
 import React, { useState } from 'react';
+import classNames from 'classnames';
+
 import Text from 'components/Text';
-// import './card.scss'
 
 import styles from './card.module.scss'
-import classNames from 'classnames';
+
  
 export type CardProps = {
     /** Дополнительный classname */

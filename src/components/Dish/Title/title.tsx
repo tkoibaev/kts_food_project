@@ -1,10 +1,8 @@
 import react from 'react'
 import classNames  from 'classnames';
-
-import Text from 'components/Text';
-import ArrowDownIcon from 'components/icons/ArrowDownIcon';
 import { Link } from 'react-router-dom';
 
+import Text from 'components/Text';
 
 import styles from './title.module.scss'
 

@@ -1,6 +1,8 @@
 import React, { HtmlHTMLAttributes, useState } from 'react';
-import styles from './dropdown.module.scss'
 import cn from 'classnames'
+
+import styles from './dropdown.module.scss'
+
 import Input from 'components/RecipesPage/Input';
 import Text from 'components/Text';
 import ArrowDownIcon from 'components/icons/ArrowDownIcon';

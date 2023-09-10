@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './equipment.module.scss'
 
 import Text from 'components/Text';

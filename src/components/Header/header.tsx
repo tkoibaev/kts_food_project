@@ -1,15 +1,15 @@
 import React from 'react';
 import classNames  from 'classnames';
-import Text from 'components/Text';
 import { Link } from 'react-router-dom';
-// import './header.module.scss'
+
+import Text from 'components/Text';
+
+import styles from './header.module.scss'
 
 export type HeaderProps = {
     className?: string;
     navElements: string[];
 }
-
-import styles from './header.module.scss'
 
 const Header:React.FC<HeaderProps> = ({navElements}) => {
 return(

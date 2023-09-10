@@ -1,6 +1,7 @@
 import react from 'react'
-import Text from 'components/Text';
 import { Link } from 'react-router-dom';
+
+import Text from 'components/Text';
 
 import styles from './CommonInfo.module.scss'
 
@@ -33,6 +34,7 @@ const CommonInfo: React.FC<CommonInfoProps> = ({className, image, preparation, c
                 {/* Содержимое элемента */}
             </div>
             <div className={styles['common-info__stats']}>
+                {/* Во многих записях время подготовки и готовки равняются -1, поэтому при таких значения эти блоки не отображаются */}
                 {preparation !== -1 && (
                 <div className={styles['common-info__stats_block']}>
                     <Text view='p-16' weight='normal'>Preparation</Text>

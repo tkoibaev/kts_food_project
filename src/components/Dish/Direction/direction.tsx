@@ -1,6 +1,6 @@
 import react from 'react'
-import styles from './direction.module.scss'
 
+import styles from './direction.module.scss'
 
 import Text from 'components/Text';
 
