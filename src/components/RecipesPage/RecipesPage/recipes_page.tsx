@@ -9,6 +9,7 @@ import Input from "components/RecipesPage/Input";
 import Dropdown from "components/RecipesPage/Dropdown";
 import Text from "components/Text";
 import { Option } from "components/RecipesPage/Dropdown";
+import Loader from 'components/Loader';
 
 import InfiniteScroll from "react-infinite-scroll-component";
 
@@ -66,7 +67,7 @@ const RecipesPage = () => {
             }
             const result = await axios({
                 method:'get',
-                url:`https://api.spoonacular.com/recipes/complexSearch?apiKey=efa577eb5e8e4f1fa5087327495ea145&addRecipeInformation=true&instructionsRequired=true&includeEquipment=true&analyzedInstructions=true&addRecipeNutrition=true&offset=${offset}&number=3`
+                url:`https://api.spoonacular.com/recipes/complexSearch?apiKey=35c0d5eef2554a03ad6c2caad7962b2a&addRecipeInformation=true&instructionsRequired=true&includeEquipment=true&analyzedInstructions=true&addRecipeNutrition=true&offset=${offset}&number=3`
             })
             // setCard(result.data.results.map((pass:el)=>({
             //     id: pass.id,
@@ -148,7 +149,7 @@ const RecipesPage = () => {
                     dataLength={cards.length}
                     next={loadMore}
                     hasMore={hasMore} // Set this to your desired condition to stop the infinite scrolling
-                    loader={<h4>Loading...</h4>} // Replace with your loader component
+                    loader={<div style={{width:'300px',height:'80px',margin:'0 auto',display:'flex' ,justifyContent:'center'}}><Loader size='l'></Loader></div>} // Replace with your loader component
                     endMessage={<p>No more recipes to load.</p>} // Message to show when all recipes are loaded
                     >
                         <div className={styles["recipes-page__cards-block"]}>

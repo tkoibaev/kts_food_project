@@ -52,7 +52,7 @@ const DishPage = () => {
         const fetch = async () => {
             const result = await axios({
                 method:'get',
-                url:`https://api.spoonacular.com/recipes/${id}/information?apiKey=efa577eb5e8e4f1fa5087327495ea145&addRecipeInformation=true&instructionsRequired=true&includeEquipment=true`
+                url:`https://api.spoonacular.com/recipes/${id}/information?apiKey=35c0d5eef2554a03ad6c2caad7962b2a&addRecipeInformation=true&instructionsRequired=true&includeEquipment=true`
             })
             setDish({
                 id: result.data.id,
