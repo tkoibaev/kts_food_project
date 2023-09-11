@@ -1,0 +1,46 @@
+@import "../../styles/variables.scss";
+
+.header {
+  background-color: $default-color;
+}
+.header__inner {
+  width: 100%;
+  max-width: $content-block-width;
+  height: 64px;
+
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: $space-l;
+}
+
+.header__navigation {
+  width: 40%;
+
+  margin-left: -300px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: $space-m;
+}
+
+.header__navigation_element {
+  cursor: pointer;
+}
+
+.header__navigation_element:hover {
+  color: $brand-color;
+}
+
+.header__user-menu {
+  display: flex;
+  align-items: center;
+  gap: $space-l;
+}

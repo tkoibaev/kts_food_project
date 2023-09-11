@@ -1,0 +1,20 @@
+@import "../../../styles/variables.scss";
+
+.equipment {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xl;
+}
+
+.equipment-list {
+  display: grid;
+  grid-template-columns: repeat(2, 153px);
+
+  gap: $space-xxs 29px;
+}
+
+.equipment-list_item {
+  display: flex;
+  align-items: center;
+  gap: $space-m;
+}
