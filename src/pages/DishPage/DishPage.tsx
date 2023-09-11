@@ -13,14 +13,12 @@ import DishIngredients from 'components/Dish/Ingredients';
 import DishEquipment from 'components/Dish/Equipment';
 import DishDirection from 'components/Dish/Direction';
 
-import {dishInfo} from '../../config'
+import { dishInfo } from '../../config';
 
-
-const apiKey = '35c0d5eef2554a03ad6c2caad7962b2a'
+const apiKey = '35c0d5eef2554a03ad6c2caad7962b2a';
 //fa7c6c2090c94745a6ec889e612a96da
 //855cdc3f7d7548649e1b838fd967ca2d
 //efa577eb5e8e4f1fa5087327495ea145
-
 
 const DishPage = () => {
   const [value, setValue] = useState<Option[]>([]);

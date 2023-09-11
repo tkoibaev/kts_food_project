@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 
-
 import Text from 'components/Text';
 import LogoIcon from 'components/icons/LogoIcon';
 import LikedIcon from 'components/icons/LikedIcon';

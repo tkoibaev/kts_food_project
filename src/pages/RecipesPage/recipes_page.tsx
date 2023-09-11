@@ -15,10 +15,10 @@ import Loader from 'components/Loader';
 import RecipesText from 'components/icons/RecipesText';
 import FindIcon from 'components/icons/FindIcon';
 
-import {cardInfoRequest} from '../../config'
-import {cardInfoProps} from '../../config'
+import { cardInfoRequest } from '../../config';
+import { cardInfoProps } from '../../config';
 
-const apiKey = '35c0d5eef2554a03ad6c2caad7962b2a'
+const apiKey = '35c0d5eef2554a03ad6c2caad7962b2a';
 //fa7c6c2090c94745a6ec889e612a96da
 //855cdc3f7d7548649e1b838fd967ca2d
 //efa577eb5e8e4f1fa5087327495ea145
@@ -89,7 +89,7 @@ const RecipesPage = () => {
   return (
     <div className={styles['recipes-page']}>
       <div className={styles['recipes-page__picture']}>
-        <RecipesText className={styles['recipes-page__picture_text']}/>
+        <RecipesText className={styles['recipes-page__picture_text']} />
       </div>
       <div className={styles['recipes-page__content']}>
         <Text tag="h3" className={styles['recipes-page__content_description']}>

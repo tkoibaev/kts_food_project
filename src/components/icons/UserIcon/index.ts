@@ -1,2 +1,2 @@
-export {default} from './userIcon'
-export * from './userIcon'
+export { default } from './userIcon';
+export * from './userIcon';

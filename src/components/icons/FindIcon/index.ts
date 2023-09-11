@@ -1,2 +1,2 @@
-export {default} from './findIcon'
-export * from './findIcon'
+export { default } from './findIcon';
+export * from './findIcon';

@@ -1,41 +1,41 @@
 export interface dishInfo {
-    id: number;
-    preparationMinutes: string;
-    cookingMinutes: string;
-    image: string;
-    aggregateLikes: string;
-    servings: string;
-    readyMinutes: string;
+  id: number;
+  preparationMinutes: string;
+  cookingMinutes: string;
+  image: string;
+  aggregateLikes: string;
+  servings: string;
+  readyMinutes: string;
 
-    title: string;
+  title: string;
 
-    summary: string;
+  summary: string;
 
-    extendedIngredients: [];
+  extendedIngredients: [];
 
-    equipment: [];
-  }
+  equipment: [];
+}
 
 export interface cardInfoRequest {
-    id: number;
-    title: string;
-    image: string;
-    readyInMinutes: string;
-    nutrition: {
-      nutrients: {
-        amount: number;
-      }[];
-      ingredients: {
-        name: string;
-      }[];
-    };
+  id: number;
+  title: string;
+  image: string;
+  readyInMinutes: string;
+  nutrition: {
+    nutrients: {
+      amount: number;
+    }[];
+    ingredients: {
+      name: string;
+    }[];
+  };
 }
 
 export interface cardInfoProps {
-    id: number;
-    title: string;
-    image: string;
-    readyInMinutes: string;
-    ccal: string;
-    ings: string;
+  id: number;
+  title: string;
+  image: string;
+  readyInMinutes: string;
+  ccal: string;
+  ings: string;
 }

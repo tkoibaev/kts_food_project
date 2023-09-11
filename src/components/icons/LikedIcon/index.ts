@@ -1,2 +1,2 @@
-export {default} from './likedIcon'
-export * from './likedIcon'
+export { default } from './likedIcon';
+export * from './likedIcon';

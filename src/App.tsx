@@ -7,7 +7,6 @@ import Header from 'components/Header';
 import RecipesPage from '../src/pages/RecipesPage';
 import DishPage from '../src/pages/DishPage';
 
-
 const App = () => {
   return (
     <>

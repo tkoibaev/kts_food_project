@@ -56,7 +56,7 @@ const Card: React.FC<CardProps> = ({
           {subtitle}
         </Text>
         <div className={styles.footer_container}>
-          <div className={styles.card_content}>{contentSlot && <Text weight='bold'>{contentSlot}</Text>}</div>
+          <div className={styles.card_content}>{contentSlot && <Text weight="bold">{contentSlot}</Text>}</div>
           <div className={styles.card_action}>{actionSlot && actionSlot}</div>
         </div>
       </div>

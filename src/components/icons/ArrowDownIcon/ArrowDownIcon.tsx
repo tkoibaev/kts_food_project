@@ -2,7 +2,6 @@ import * as React from 'react';
 import { IconProps } from '../Icon';
 import Icon from '../Icon';
 
-
 const ArrowDownIcon: React.FC<IconProps> = ({ className, color, width, height }) => {
   let colorResult: string = '';
   if (color === 'primary') {

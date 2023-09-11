@@ -1,2 +1,2 @@
-export {default} from './recipesText'
-export * from './recipesText'
+export { default } from './recipesText';
+export * from './recipesText';

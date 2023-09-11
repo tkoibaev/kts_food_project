@@ -1,2 +1,2 @@
-export {default} from './equipmentIcon'
-export * from './equipmentIcon'
+export { default } from './equipmentIcon';
+export * from './equipmentIcon';

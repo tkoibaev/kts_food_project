@@ -1,2 +1,2 @@
-export {default} from './logoIcon'
-export * from './logoIcon'
+export { default } from './logoIcon';
+export * from './logoIcon';
