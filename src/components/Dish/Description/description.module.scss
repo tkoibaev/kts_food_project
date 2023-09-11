@@ -1,16 +1,16 @@
-@import '../../../styles/variables.scss';
+@import "../../../styles/variables.scss";
 
 .dish-description {
-    padding: 36px;
-    background: rgba(181, 70, 15, 0.33);
-    border-radius: $border-radius;
+  padding: 36px;
+  background: rgba(181, 70, 15, 0.33);
+  border-radius: $border-radius;
 }
 
 .dish-description a {
-    color: inherit;
-    text-decoration: underline !important;
+  color: inherit;
+  text-decoration: underline !important;
 }
 
 .dish-description a:hover {
-    color:$text-primary-color !important
+  color: $text-primary-color !important;
 }

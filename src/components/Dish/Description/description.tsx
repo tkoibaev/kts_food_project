@@ -1,29 +1,25 @@
-import react, { Fragment, Children } from 'react'
+import react, { Fragment, Children } from 'react';
 
 import Text from 'components/Text';
 
-import styles from './description.module.scss'
+import styles from './description.module.scss';
 
-
-export type dishDescriptionProps = {
-    /** Дополнительный classname */
-    className?: string,
-    children:React.ReactNode,
-    // title?: React.ReactNode;
+export type DishDescriptionProps = {
+  /** Дополнительный classname */
+  className?: string;
+  children: React.ReactNode;
 };
 
-const DishDescription: React.FC<dishDescriptionProps> = ({ children }) => {
-    return (
-      <div className={styles['dish-description']}>
-        <Text>
-          {Children.map(children, (child) => (
-            <Fragment>{child}</Fragment>
-          ))}
-        </Text>
-      </div>
-    );
-  };
+const DishDescription: React.FC<DishDescriptionProps> = ({ children }) => {
+  return (
+    <div className={styles['dish-description']}>
+      <Text>
+        {Children.map(children, (child) => (
+          <Fragment>{child}</Fragment>
+        ))}
+      </Text>
+    </div>
+  );
+};
 
-export default DishDescription
-
-
+export default DishDescription;

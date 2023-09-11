@@ -1,2 +1,2 @@
-export {default} from './ingredients'
-export * from './ingredients'
+export { default } from './ingredients';
+export * from './ingredients';

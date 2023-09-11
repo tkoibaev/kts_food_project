@@ -1,65 +1,66 @@
-@import '../../../styles/variables.scss';
-@import '../../../styles/styles.scss';
+@import "../../../styles/variables.scss";
+@import "../../../styles/styles.scss";
 
 // .recipes-page {
 //     width: $content-block-width;
 //     margin: 0 auto;
 // }
 .aaaa {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .recipes-page {
-    padding-bottom: 113px;
+  padding-bottom: 113px;
 }
 
 .recipes-page__picture {
-    width: 100%;
-    max-width: 1540px;
-    height: 570px;
-    margin: 0 auto;
-    background-color: #5d2020;
-    margin-bottom: 50px;
+  width: 100%;
+  max-width: 1540px;
+  height: 570px;
+  margin: 0 auto;
+  background-color: #5d2020;
+  margin-bottom: 50px;
 
-    background: url('../../assets/recipes.png'), lightgray 50% / cover no-repeat;
+  background:
+    url("../../assets/recipes.png"),
+    lightgray 50% / cover no-repeat;
 }
-.recipes-page__content{
-    max-width: $content-block-width;
-    width: 100%;
-    margin: 0 auto;
+.recipes-page__content {
+  max-width: $content-block-width;
+  width: 100%;
+  margin: 0 auto;
 
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 
 .recipes-page__content_description {
-    text-align: center;
+  text-align: center;
 }
 
 .recipes-page__actions {
-    height: 124px;
-    display: flex;
-    flex-direction: column;
-    gap: $space-l;
+  height: 124px;
+  display: flex;
+  flex-direction: column;
+  gap: $space-l;
 }
 
 .recipes-page__actions_input {
-    height: 50px;
+  height: 50px;
 
-    display: flex;
-    gap:$space-l;
+  display: flex;
+  gap: $space-l;
 }
 
-
-.recipes-page__actions_dropdown { 
-    display: flex;
-    justify-content: end;
+.recipes-page__actions_dropdown {
+  display: flex;
+  justify-content: end;
 }
 
 .recipes-page__cards-block {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: calc((100% - 3 * 360px) / 2);
-    grid-row-gap: 64px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: calc((100% - 3 * 360px) / 2);
+  grid-row-gap: 64px;
 }

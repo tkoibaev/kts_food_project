@@ -1,2 +1,2 @@
-export {default} from './direction'
-export * from './direction'
+export { default } from './direction';
+export * from './direction';

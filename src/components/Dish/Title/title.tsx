@@ -1,31 +1,27 @@
-import react from 'react'
-import classNames  from 'classnames';
+import react from 'react';
+import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 
 import Text from 'components/Text';
+import BackIcon from 'components/icons/BackIcon';
 
-import styles from './title.module.scss'
+import styles from './title.module.scss';
 
-export type dishTitleProps = {
-    /** Дополнительный classname */
-    className?: string,
-    children:string,
-    // title?: React.ReactNode;
+export type DishTitleProps = {
+  /** Дополнительный classname */
+  className?: string;
+  children: string;
 };
 
-const DishTitle: React.FC<dishTitleProps> = ({children,className}) => {
+const DishTitle: React.FC<DishTitleProps> = ({ children, className }) => {
+  return (
+    <div className={classNames(styles['dish-title'], className)}>
+      <Link to={`/`}>
+        <BackIcon />
+      </Link>
+      <Text weight="bold">{children}</Text>
+    </div>
+  );
+};
 
-    return(
-        <div className={classNames(styles['dish-title'], className)}>
-            {/* <ArrowDownIcon width={40} style={{transform:'rotate(90deg)'}} /> */}
-            <Link to={`/`}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path d="M20.1201 26.56L11.4268 17.8667C10.4001 16.84 10.4001 15.16 11.4268 14.1333L20.1201 5.44" stroke="#B5460F" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </Link>
-            <Text weight='bold'>{children}</Text>
-        </div>
-    )
-}
-
-export default DishTitle
+export default DishTitle;

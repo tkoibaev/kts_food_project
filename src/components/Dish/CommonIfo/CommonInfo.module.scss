@@ -1,32 +1,31 @@
-@import '../../../styles/variables.scss';
+@import "../../../styles/variables.scss";
 
 .common-info {
-    display: flex;
-    gap:166px;
-    align-items: center;
+  display: flex;
+  gap: 166px;
+  align-items: center;
 }
 
 .common-info__image {
-    width: 448px;
-    height: 298px;
-    flex-shrink: 0;
+  width: 448px;
+  height: 298px;
+  flex-shrink: 0;
 
-    border-radius: $border-radius;
-    // background: url('../../assets/recipes.png'), lightgray 50% / cover no-repeat;
-
+  border-radius: $border-radius;
+  // background: url('../../assets/recipes.png'), lightgray 50% / cover no-repeat;
 }
 
 .common-info__stats {
-    height: 146px;
+  height: 146px;
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 100px;
-    grid-row-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 100px;
+  grid-row-gap: 10px;
 }
 
 .common-info__stats_block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -1,2 +1,2 @@
-export {default}  from './CommonInfo'
-export * from './CommonInfo'
+export { default } from './CommonInfo';
+export * from './CommonInfo';

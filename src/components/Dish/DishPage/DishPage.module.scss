@@ -1,27 +1,26 @@
-@import '../../../styles/variables.scss';
-
+@import "../../../styles/variables.scss";
 
 .dish-page {
-    max-width: $content-block-width;
-    width: 100%;
-    margin: 0 auto;
+  max-width: $content-block-width;
+  width: 100%;
+  margin: 0 auto;
 
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 
-    padding-bottom: 53px;
+  padding-bottom: 53px;
 }
 
 .dish-page__title {
-    margin-top: 39px;
-    font-size: 44px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 48px;
+  margin-top: 39px;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
 }
 
 .dish-page__need {
-    display: flex;
-    gap: 53px;
+  display: flex;
+  gap: 53px;
 }

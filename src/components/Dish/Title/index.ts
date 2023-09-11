@@ -1,2 +1,2 @@
-export {default} from './title'
-export * from './title'
+export { default } from './title';
+export * from './title';

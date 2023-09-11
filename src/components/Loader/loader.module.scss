@@ -1,32 +1,31 @@
-@import '../../styles/variables.scss';
+@import "../../styles/variables.scss";
 
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
 
-    to {
-        transform: rotate(360deg);
-    }
-
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .loader {
-    color: $brand-color;
-    animation: spin 1s infinite linear;
+  color: $brand-color;
+  animation: spin 1s infinite linear;
 }
 
 .loader.loader_size_s {
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
 }
 
 .loader.loader_size_m {
-    width: 48px;
-    height: 48px;
+  width: 48px;
+  height: 48px;
 }
 
 .loader.loader_size_l {
-    width: 60px;
-    height: 60px;
+  width: 60px;
+  height: 60px;
 }
