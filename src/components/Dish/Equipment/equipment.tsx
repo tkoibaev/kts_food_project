@@ -42,4 +42,4 @@ const DishEquipment: React.FC<DishEquipmentProps> = ({ list }) => {
   );
 };
 
-export default DishEquipment;
+export default React.memo(DishEquipment);

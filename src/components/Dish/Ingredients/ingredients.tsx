@@ -38,4 +38,4 @@ const DishIngredients: React.FC<DishIngredientsProps> = ({ list }) => {
   );
 };
 
-export default DishIngredients;
+export default React.memo(DishIngredients);

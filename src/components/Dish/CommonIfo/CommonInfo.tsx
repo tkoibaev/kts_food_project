@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Text from 'components/Text';
@@ -6,24 +6,13 @@ import Text from 'components/Text';
 import styles from './CommonInfo.module.scss';
 
 export type CommonInfoProps = {
-  /** Дополнительный classname */
   className?: string;
-  /** URL изображения */
   image: string;
-  /** Слот над заголовком */
   preparation: React.ReactNode;
-  /** Заголовок карточки */
   cooking: React.ReactNode;
-  /** Описание карточки */
   total?: React.ReactNode;
   ratings: React.ReactNode;
   servings: React.ReactNode;
-  // /** Содержимое карточки (футер/боковая часть), может быть пустым */
-  // contentSlot?: React.ReactNode;
-  // /** Клик на карточку */
-  // onClick?: React.MouseEventHandler;
-  // /** Слот для действия */
-  // actionSlot?: React.ReactNode;
 };
 
 const CommonInfo: React.FC<CommonInfoProps> = ({
@@ -90,4 +79,4 @@ const CommonInfo: React.FC<CommonInfoProps> = ({
   );
 };
 
-export default CommonInfo;
+export default React.memo(CommonInfo);

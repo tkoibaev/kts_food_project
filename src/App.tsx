@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import '../src/styles/styles.scss';
 
 import Header from 'components/Header';
-import RecipesPage from 'components/RecipesPage/RecipesPage';
-import DishPage from 'components/Dish/DishPage';
+import RecipesPage from '../src/pages/RecipesPage';
+import DishPage from '../src/pages/DishPage';
 
 
 const App = () => {

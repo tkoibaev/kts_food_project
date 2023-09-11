@@ -1,7 +1,12 @@
-const RecipesText = () => {
+import { IconProps } from '../Icon';
+import Icon from '../Icon';
+
+const RecipesText: React.FC<IconProps> = ({ className}) => {
+
+
     return (
         <svg
-          style={{ margin: ' 367px 528px 0px 600px' }}
+          className={className}
           xmlns="http://www.w3.org/2000/svg"
           width="313"
           height="185"

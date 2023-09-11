@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 
 import styles from './direction.module.scss';
 
@@ -32,4 +32,4 @@ const DishDirection: React.FC<DishDirectionProps> = ({ list }) => {
   );
 };
 
-export default DishDirection;
+export default React.memo(DishDirection);

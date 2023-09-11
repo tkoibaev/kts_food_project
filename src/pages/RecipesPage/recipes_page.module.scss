@@ -1,5 +1,5 @@
-@import "../../../styles/variables.scss";
-@import "../../../styles/styles.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/styles.scss";
 
 // .recipes-page {
 //     width: $content-block-width;
@@ -22,8 +22,12 @@
   margin-bottom: 50px;
 
   background:
-    url("../../assets/recipes.png"),
+    url("../../components/assets/recipes.png"),
     lightgray 50% / cover no-repeat;
+}
+
+.recipes-page__picture_text {
+  margin:367px 528px 0px 600px;
 }
 .recipes-page__content {
   max-width: $content-block-width;

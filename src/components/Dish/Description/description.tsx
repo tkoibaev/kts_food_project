@@ -1,4 +1,4 @@
-import react, { Fragment, Children } from 'react';
+import React, { Fragment, Children } from 'react';
 
 import Text from 'components/Text';
 
@@ -22,4 +22,4 @@ const DishDescription: React.FC<DishDescriptionProps> = ({ children }) => {
   );
 };
 
-export default DishDescription;
+export default React.memo(DishDescription);
